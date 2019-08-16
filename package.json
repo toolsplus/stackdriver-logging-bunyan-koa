@@ -1,0 +1,70 @@
+{
+  "name": "stackdriver-logging-bunyan-koa",
+  "description": "Koa middleware for Bunyan stream to Stackdriver Logging",
+  "version": "1.0.0-alpha.0",
+  "license": "Apache-2.0",
+  "author": "Tobias Binna",
+  "engines": {
+    "node": ">=8.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toolsplus/stackdriver-logging-bunyan-koa"
+  },
+  "main": "./build/src/index.js",
+  "types": "./build/src/index.d.ts",
+  "files": [
+    "build/src",
+    "!build/src/**/*.map"
+  ],
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "nyc mocha --recursive build/test",
+    "system-test": "mocha build/system-test --timeout 600000",
+    "codecov": "nyc report --reporter=json && codecov -f .coverage/*.json"
+  },
+  "keywords": [
+    "google apis client",
+    "google api client",
+    "google apis",
+    "google api",
+    "google",
+    "google cloud platform",
+    "google cloud",
+    "cloud",
+    "google logging",
+    "logging",
+    "stackdriver logging",
+    "stackdriver",
+    "bunyan stream",
+    "koa"
+  ],
+  "devDependencies": {
+    "@types/bunyan": "^1.8.6",
+    "@types/koa": "^2.0.49",
+    "@types/node": "^12.7.2",
+    "@types/request": "^2.48.2",
+    "gts": "^1.1.0",
+    "koa": "^2.7.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@google-cloud/logging-bunyan": "^1.2.2",
+    "@types/mocha": "^5.2.7",
+    "@types/proxyquire": "^1.3.28",
+    "@types/uuid": "^3.4.5",
+    "bunyan": "^1.8.12",
+    "codecov": "^3.5.0",
+    "delay": "^4.3.0",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "power-assert": "^1.6.1",
+    "proxyquire": "^2.1.3",
+    "source-map-support": "^0.5.13",
+    "uuid": "^3.3.2"
+  },
+  "peerDependencies": {
+    "bunyan": "*"
+  }
+}
