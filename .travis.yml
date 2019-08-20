@@ -7,10 +7,19 @@ notifications:
 node_js:
   - '8'
   - '10'
-before_script:
+install:
   - npm prune && npm cache verify
   - npm install
 script:
   - npm run build && npm run test
 after_success:
   - npm run codecov
+
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: npx semantic-release

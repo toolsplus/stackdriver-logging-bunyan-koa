@@ -1,7 +1,7 @@
 {
   "name": "stackdriver-logging-bunyan-koa",
   "description": "Koa middleware for Bunyan stream to Stackdriver Logging",
-  "version": "1.0.0-alpha.0",
+  "version": "0.0.0-development",
   "license": "Apache-2.0",
   "author": "Tobias Binna",
   "engines": {
@@ -18,10 +18,12 @@
     "!build/src/**/*.map"
   ],
   "scripts": {
+    "commit": "git-cz",
     "build": "tsc -p .",
     "test": "nyc mocha --recursive build/test",
     "system-test": "mocha build/system-test --timeout 600000",
-    "codecov": "nyc report --reporter=json && codecov -f .coverage/*.json"
+    "codecov": "nyc report --reporter=json && codecov -f .coverage/*.json",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "google apis client",
@@ -44,8 +46,11 @@
     "@types/koa": "^2.0.49",
     "@types/node": "^12.7.2",
     "@types/request": "^2.48.2",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
     "gts": "^1.1.0",
     "koa": "^2.7.0",
+    "semantic-release": "^15.13.21",
     "typescript": "^3.5.3"
   },
   "dependencies": {
@@ -66,5 +71,10 @@
   },
   "peerDependencies": {
     "bunyan": "*"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
