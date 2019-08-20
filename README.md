@@ -47,7 +47,7 @@ async function startServer() {
   const app = koa();
 
   // Install the logging middleware. This ensures that a Bunyan-style `log`
-  // function is available on the `request` object. Attach this as one of the
+  // function is available on the `context` object. Attach this as one of the
   // earliest middleware to make sure that log function is available in all the
   // subsequent middleware and routes.
   app.use(mw);
